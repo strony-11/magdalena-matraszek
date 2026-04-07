@@ -67,7 +67,7 @@
 
         .container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
 
-        /* PRZESUNIĘCIE W GÓRĘ */
+        
         .page-section { display: none; padding: 20px 0 60px 0; }
         .page-section.active { display: block; }
 
@@ -137,7 +137,7 @@
         .book-info h1 { font-size: 3.5em; margin: 10px 0; }
         .subtitle { color: var(--accent-color); text-transform: uppercase; letter-spacing: 4px; font-weight: 600; font-size: 0.9em; }
 
-        /* SIATKA MEDIÓW */
+        
         .media-group-title {
             margin: 40px 0 20px 0;
             padding-bottom: 10px;
@@ -208,7 +208,24 @@
         .author-image-wrapper { flex: 0 0 350px; border-radius: 4px; overflow: hidden; box-shadow: 15px 15px 40px rgba(0,0,0,0.1); }
         .author-image-wrapper img { width: 100%; transition: 0.6s; }
 
-        footer { text-align: center; padding: 60px 0; background: var(--primary-color); color: white; margin-top: 80px; }
+        .contact-box {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid var(--accent-color);
+    max-width: 500px;
+    margin: 40px auto;
+}
+.contact-box a {
+    font-size: 1.5em;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: 0.3s;
+}
+.contact-box a:hover { color: var(--accent-color); }
+		footer { text-align: center; padding: 60px 0; background: var(--primary-color); color: white; margin-top: 80px; }
         .social-icons a { color: white; font-size: 1.5em; margin: 0 15px; transition: 0.3s; }
         .social-icons a:hover { color: var(--accent-color); }
 
@@ -226,6 +243,7 @@
         <a id="nav-media" onclick="showPage('media')">Media</a>
         <a id="nav-patronaty" onclick="showPage('patronaty')">Patronaty</a>
         <a id="nav-autor" onclick="showPage('autor')">O autorce</a>
+		<a id="nav-kontakt" onclick="showPage('kontakt')">Kontakt</a>
     </nav>
 
     <div class="container">
@@ -363,7 +381,14 @@
         </div>
    </div>        
     
-
+<div id="kontakt" class="page-section" style="display: none;">
+    <div class="section-title"><h2>Kontakt</h2></div>
+    <div class="contact-box">
+        <p>Zapraszam do kontaktu mailowego:</p>
+        <a href="mailto:magdalena.matraszek@op.pl">magdalena.matraszek@op.pl</a>
+        <p style="margin-top: 30px; font-size: 0.9em; opacity: 0.7;">Możesz również napisać do mnie przez media społecznościowe.</p>
+    </div>
+</div>
     <footer>
         <div class="social-icons">
             <a href="https://www.instagram.com/magdalena_matraszek_autorka" target="_blank"><i class="fab fa-instagram"></i></a>
