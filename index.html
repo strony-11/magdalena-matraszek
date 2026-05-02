@@ -234,6 +234,52 @@
             .book-cover-container { width: 100%; max-width: 320px; }
             .opinions-wrapper { flex-direction: column; }
         }
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 25px; 
+    margin-bottom: 50px;
+}
+
+
+.video-card {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: 0.3s;
+    border: 1px solid rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+}
+
+.video-card:hover {
+    transform: translateY(-5px); 
+    background: white;
+    border-color: var(--accent-color);
+}
+
+
+.thumb-wrapper {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; 
+    overflow: hidden;
+}
+
+.thumb-wrapper img {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-content { padding: 20px; }
+.card-content h3 { font-size: 1rem; margin: 0 0 10px 0; line-height: 1.4; }
+.video-meta { font-size: 0.8em; color: var(--accent-color); font-weight: 600; text-transform: uppercase; }
     </style>
 </head>
 <body>
@@ -293,82 +339,113 @@
         <div id="media" class="page-section">
             <div class="section-title"><h2>Media</h2></div>
 
-            <h3 class="media-group-title"><i class="fas fa-microphone"></i> Prasa, radio, TV</h3>
-            <div class="links-grid">
-                <a href="https://radio.opole.pl/529,2655,czy-w-poloznictwie-i-ginekologii-wszystko-jest-o" class="link-card" target="_blank">
-					<i class="fas fa-headphones"></i>
-					<h3>Radio Opole</h3>
-					<p>Dobry wieczór, tu Opole</p>
-				<a href="https://vod.tvp.pl/programy,88/pytanie-na-sniadanie-odcinki,2542729/odcinek-99,S09E99,2766706" class="link-card" target="_blank">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Pytanie na Śniadanie</h3>
-                    <p>TVP</p>
-                </a>
-                <a href="https://radio.opole.pl/365,1817,wszystko-jest-ok-rozmowa-z-magdalena-matraszek" class="link-card" target="_blank">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Radio Opole</h3>
-                    <p>Więcej kultury</p>
-                </a>
-                <a href="https://www.medonet.pl/zdrowie/zdrowie-dla-kazdego,magda-stracila-dziecko--od-lekarza-uslysyzala--sama-sobie--dziecko--jestes-winna,artykul,84913984.html" class="link-card" target="_blank">
-                    <i class="fas fa-quote-left"></i>
-                    <h3>Medonet</h3>
-                    <p></p>
-                </a>
-                <a href="https://kobieta.wp.pl/trzeba-bylo-myslec-a-nie-nogi-rozkladac-straszne-co-uslyszala-w-szpitalu-7251121908365696a" class="link-card" target="_blank">
-                    <i class="fas fa-quote-left"></i>
-                    <h3>WP Kobieta</h3>
-                    <p></p>
-                </a>
-                <a href="https://www.wysokieobcasy.pl/zyclepiej/7,181614,32590229,slyszalam-bicie-serca-hormony-buzowaly-pielegniarka-fuknela.html" class="link-card" target="_blank">
-                    <i class="fas fa-quote-left"></i>
-                    <h3>Wysokie Obcasy</h3>
-                    <p></p>
-                </a>
-                <a href="https://audycje.tokfm.pl/player/v2/187503" class="link-card" target="_blank">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Radio Tok FM</h3>
-                    <p>W zasięgu</p>
-                </a>
-                <a href="https://zwierciadlo.pl/kultura/ksiazki/555508,1,rozmowa-z-magdalena-matraszek-autorka-ksiazki-wszystko-jest-ok.read" class="link-card" target="_blank">
-                    <i class="fas fa-quote-left"></i>
-                    <h3>Zwierciadło</h3>
-                    <p></p>
-                </a>
+    <h3 class="media-group-title"><i class="fas fa-microphone"></i> Podcasty</h3>
+    <div class="video-grid">
+        
+        <a href="https://www.youtube.com/watch?v=80jx3Ryjmac" class="video-card" target="_blank">
+            <div class="thumb-wrapper">
+                <img src="https://img.youtube.com/vi/80jx3Ryjmac/maxresdefault.jpg" alt="Boni Vibes">
             </div>
+            <div class="card-content">
+                <h3>„
+Magdalena Matraszek | Strata ciąży: Dlaczego specjaliści zrzucają na nas winę? | Boni Vibes</h3>
+                <p class="video-meta">Boni Vibes | Podcast</p>
+                <span class="video-link">Odsłuchaj</span>
+            </div>
+        </a>
 
-            <h3 class="media-group-title"><i class="fas fa-microphone"></i> Podcasty</h3>
-            <div class="links-grid">
-				<a href="https://youtu.be/80jx3Ryjmac?is=p6mtfPEqAw32y1JK" class="link-card" target="_blank">
-					<i class="fas fa-headphones"></i>
-					<h3>Boni Vibes</h3>
-					<p>Ciężarna przestaje być pacjentką</p>
-				<a href="https://youtu.be/dw9ufq0aS0M?si=TPf57Vf6RjQU6n3S" class="link-card" target="_blank">
-    			    <i class="fas fa-headphones"></i>
-    			    <h3>Wysokie Obcasy</h3>
-    				<p>Po swojemu</p>
-			   </a>
-				<a href="https://youtu.be/wranqcHGWuI" class="link-card" target="_blank">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Amnesty Poland</h3>
-                    <p>Prawa człowieka na porodówce</p>
-                </a>
-                <a href="https://youtu.be/T_N0KyZjPHg" class="link-card" target="_blank">
-                    <i class="fas fa-headphones"></i>
-                    <h3>Tok FM</h3>
-                    <p>Półka z książkami</p>
-                </a>
-                <a href="https://youtu.be/dv3RlUXWkkA" class="link-card" target="_blank">
-                    <i class="fas fa-headphones"></i>
-                    <h3>TVP Info</h3>
-                    <p>Powiem to pierwszy raz</p>
-		</a>
-		<a href="https://www.youtube.com/watch?v=Wyvq4tDTvtM" class="link-card" target="_blank">
-		    <i class="fas fa-headphones"></i>
-		    <h3>Podcast Feministyczny</h3>
- 		    <p>Czy wszystko jest OK?</p>
-	        </a>
+        <a href="https://www.youtube.com/watch?v=dw9ufq0aS0M" class="video-card" target="_blank">
+            <div class="thumb-wrapper">
+                <img src="https://img.youtube.com/vi/dw9ufq0aS0M/maxresdefault.jpg" alt="Wysokie Obcasy">
             </div>
-        </div>
+            <div class="card-content">
+                <h3>Po swojemu | Rozmowa o książce „Wszystko jest OK”</h3>
+                <p class="video-meta">Wysokie Obcasy | Podcast</p>
+                <span class="video-link">Odsłuchaj</span>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=wranqcHGWuI" class="video-card" target="_blank">
+            <div class="thumb-wrapper">
+                <img src="https://img.youtube.com/vi/wranqcHGWuI/maxresdefault.jpg" alt="Amnesty Poland">
+            </div>
+            <div class="card-content">
+                <h3>Prawa człowieka na porodówce | Magdalena Matraszek</h3>
+                <p class="video-meta">Amnesty Poland | Podcast</p>
+                <span class="video-link">Odsłuchaj</span>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=T_N0KyZjPHg" class="video-card" target="_blank">
+            <div class="thumb-wrapper">
+                <img src="https://img.youtube.com/vi/T_N0KyZjPHg/maxresdefault.jpg" alt="Tok FM">
+            </div>
+            <div class="card-content">
+                <h3>Półka z książkami | O literaturze i doświadczeniach</h3>
+                <p class="video-meta">Radio Tok FM | Podcast</p>
+                <span class="video-link">Odsłuchaj</span>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=dv3RlUXWkkA" class="video-card" target="_blank">
+            <div class="thumb-wrapper">
+                <img src="https://img.youtube.com/vi/dv3RlUXWkkA/maxresdefault.jpg" alt="TVP Info">
+            </div>
+            <div class="card-content">
+                <h3>Powiem to pierwszy raz | Szczera rozmowa</h3>
+                <p class="video-meta">TVP Info | Podcast</p>
+                <span class="video-link">Odsłuchaj</span>
+            </div>
+        </a>
+
+        <a href="https://www.youtube.com/watch?v=Wyvq4tDTvtM" class="video-card" target="_blank">
+            <div class="thumb-wrapper">
+                <img src="https://img.youtube.com/vi/Wyvq4tDTvtM/maxresdefault.jpg" alt="Podcast Feministyczny">
+            </div>
+            <div class="card-content">
+                <h3>Czy wszystko jest OK? | Rozmowa o wyborach</h3>
+                <p class="video-meta">Podcast Feministyczny</p>
+                <span class="video-link">Odsłuchaj</span>
+            </div>
+        </a>
+
+    </div>
+
+    <h3 class="media-group-title"><i class="fas fa-newspaper"></i> Prasa, radio, TV</h3>
+    <div class="links-grid">
+        <a href="https://radio.opole.pl/529,2655,czy-w-poloznictwie-i-ginekologii-wszystko-jest-o" class="link-card" target="_blank">
+            <i class="fas fa-headphones"></i>
+            <div><h3>Radio Opole</h3><p>Dobry wieczór, tu Opole</p></div>
+        </a>
+        <a href="https://vod.tvp.pl/programy,88/pytanie-na-sniadanie-odcinki,2542729/odcinek-99,S09E99,2766706" class="link-card" target="_blank">
+            <i class="fas fa-tv"></i>
+            <div><h3>Pytanie na Śniadanie</h3><p>TVP</p></div>
+        </a>
+        <a href="https://radio.opole.pl/365,1817,wszystko-jest-ok-rozmowa-z-magdalena-matraszek" class="link-card" target="_blank">
+            <i class="fas fa-headphones"></i>
+            <div><h3>Radio Opole</h3><p>Więcej kultury</p></div>
+        </a>
+        <a href="https://www.medonet.pl/zdrowie/zdrowie-dla-kazdego,magda-stracila-dziecko--od-lekarza-uslysyzala--sama-sobie--dziecko--jestes-winna,artykul,84913984.html" class="link-card" target="_blank">
+            <i class="fas fa-quote-left"></i>
+            <div><h3>Medonet</h3><p>Artykuł</p></div>
+        </a>
+        <a href="https://kobieta.wp.pl/trzeba-bylo-myslec-a-nie-nogi-rozkladac-straszne-co-uslyszala-w-szpitalu-7251121908365696a" class="link-card" target="_blank">
+            <i class="fas fa-quote-left"></i>
+            <div><h3>WP Kobieta</h3><p>Artykuł</p></div>
+        </a>
+        <a href="https://www.wysokieobcasy.pl/zyclepiej/7,181614,32590229,slyszalam-bicie-serca-hormony-buzowaly-pielegniarka-fuknela.html" class="link-card" target="_blank">
+            <i class="fas fa-quote-left"></i>
+            <div><h3>Wysokie Obcasy</h3><p>Reportaż</p></div>
+        </a>
+        <a href="https://audycje.tokfm.pl/player/v2/187503" class="link-card" target="_blank">
+            <i class="fas fa-headphones"></i>
+            <div><h3>Radio Tok FM</h3><p>W zasięgu</p></div>
+        </a>
+        <a href="https://zwierciadlo.pl/kultura/ksiazki/555508,1,rozmowa-z-magdalena-matraszek-autorka-ksiazki-wszystko-jest-ok.read" class="link-card" target="_blank">
+            <i class="fas fa-quote-left"></i>
+            <div><h3>Zwierciadło</h3><p>Wywiad</p></div>
+        </a>
+    </div>
 
         <div id="patronaty" class="page-section">
             <div class="section-title"><h2>Patronaty</h2></div>
