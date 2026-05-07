@@ -280,6 +280,61 @@
 .card-content { padding: 20px; }
 .card-content h3 { font-size: 1rem; margin: 0 0 10px 0; line-height: 1.4; }
 .video-meta { font-size: 0.8em; color: var(--accent-color); font-weight: 600; text-transform: uppercase; }
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(10px);
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  background: white;
+  padding: 40px;
+  border-radius: 12px;
+  max-width: 500px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  transform: translateY(20px);
+  transition: transform 0.3s;
+}
+
+.modal-overlay.active .modal-content {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #666;
+  transition: color 0.3s;
+}
+
+.modal-close:hover {
+  color: var(--accent-color);
+}
     </style>
 </head>
 <body>
@@ -497,6 +552,13 @@
         <p style="margin-top: 20px; font-size: 0.8em; opacity: 0.6;">&copy; 2026 Magdalena Matraszek.</p>
     </footer>
 
+        <div id="welcomeModal" class="modal-overlay">
+            <div class="modal-content" style="padding: 10px; background: transparent; box-shadow: none;">
+                <button class="modal-close" onclick="closeModal()" style="color: black; z-index: 10;">&times;</button>
+                <img src="popup.png" alt="Popup image" style="max-width: 100%; border-radius: 8px; display: block;">
+            </div>
+        </div>
+
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         function showPage(pageId) {
@@ -512,7 +574,15 @@
             content.style.display = (content.style.display === "block") ? "none" : "block";
         }
 
+        function closeModal() {
+            document.getElementById('welcomeModal').classList.remove('active');
+        }
+
         AOS.init();
+
+        setTimeout(() => {
+            document.getElementById('welcomeModal').classList.add('active');
+        }, 1000);
     </script>
 </body>
 </html>
