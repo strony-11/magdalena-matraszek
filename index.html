@@ -215,19 +215,25 @@
 
         .galeria-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 20px;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
             margin-top: 20px;
         }
         .galeria-grid img {
             width: 100%;
-            height: auto;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
             border-radius: 8px;
             transition: transform 0.3s;
             cursor: pointer;
         }
         .galeria-grid img:hover {
             transform: scale(1.02);
+        }
+        @media (max-width: 800px) {
+            .galeria-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
         }
         .galeria-date {
             text-align: center;
