@@ -216,13 +216,13 @@
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 6px;
+            gap: 0;
             margin-top: 20px;
         }
         .galeria-grid img {
             width: 100%;
-            aspect-ratio: 4 / 3;
-            object-fit: contain;
+            height: auto;
+            display: block;
             border-radius: 8px;
             transition: transform 0.3s;
             cursor: pointer;
