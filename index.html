@@ -21,20 +21,12 @@
             --text-color: #333;
         }
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
-
         body {  
             font-family: 'Montserrat', sans-serif;  
             line-height: 1.6;  
             margin: 0;  
             color: var(--text-color);  
-            background: linear-gradient(-45deg, #fdfcfb, #e2d1c3, #f5efef, #e2d1c3);
-            background-size: 400% 400%;
-            animation: gradientAnimation 15s ease infinite;
+            background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 50%, #f5efef 100%);
             background-attachment: fixed;
             min-height: 100vh;
         }
