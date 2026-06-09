@@ -259,6 +259,22 @@
         }
         .btn-gold:hover { background: transparent; color: var(--primary-color); }
 
+        .btn-dark {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 15px 40px;
+            background: #1a1a1a;
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: all 0.3s;
+            border: 1px solid #333;
+        }
+        .btn-dark:hover { background: var(--accent-color); }
+
         .section-title { text-align: center; margin-bottom: 30px; }
         .section-title h2 { font-size: 2.5em; position: relative; display: inline-block; padding-bottom: 15px; }
         .section-title h2::after { content: ''; position: absolute; bottom: 0; left: 25%; width: 50%; height: 2px; background: var(--accent-color); }
@@ -347,6 +363,7 @@
         <a id="nav-glowna" class="active" onclick="showPage('glowna')">Książka</a>
         <a id="nav-autor" onclick="showPage('autor')">O autorce</a>
         <a id="nav-media" onclick="showPage('media')">Media</a>
+        <a id="nav-audiobook" onclick="showPage('audiobook')">Audiobook</a>
         <a id="nav-patronaty" onclick="showPage('patronaty')">Patronaty</a>
 		<a id="nav-wspolprace" onclick="showPage('wspolprace')">Współpraca</a>
 		<a id="nav-galeria" onclick="showPage('galeria')">Galeria</a>
@@ -393,8 +410,9 @@
 </p>
                     </div>
                     <div style="display: flex; gap: 20px; align-items: center; flex-wrap: wrap; margin-top: 20px;">
-                        <a href="https://www.empik.com/wszystko-jest-ok-matraszek-magdalena,p1698111979,ksiazka-p" class="btn-gold" target="_blank" style="margin-top: 0; display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-book"></i>ZAMÓW KSIĄŻKĘ</a>
-                        <a href="https://buycoffee.to/magdalena-matraszek" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 15px 40px; background: #1a1a1a; color: white; text-decoration: none; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; transition: all 0.3s; border: 1px solid #333;" onmouseover="this.style.background='#c5a059'" onmouseout="this.style.background='#1a1a1a'"><i class="fas fa-mug-hot"></i>CHODŹ NA KAWĘ</a>
+                        <a href="https://www.empik.com/wszystko-jest-ok-matraszek-magdalena,p1698111979,ksiazka-p" class="btn-gold" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-book"></i>Książka</a>
+                        <a href="https://payhip.com/b/6Xmq8" class="btn-gold" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-headphones"></i>AUDIOBOOK</a>
+                        <a href="https://buycoffee.to/magdalena-matraszek" class="btn-dark" target="_blank"><i class="fas fa-mug-hot"></i>KAWA</a>
                     </div>
                 </div>
             </section>
@@ -541,6 +559,18 @@
         </a>
     </div>
 </div>
+
+        <div id="audiobook" class="page-section">
+            <div class="section-title"><h2>AUDIOBOOK</h2></div>
+            <div style="max-width: 700px; margin: 0 auto; text-align: center; font-size: 1.15em; line-height: 1.8; color: #444;">
+                <p>Terapeutyczna sesja audio dla kobiet po poronieniu i stracie okołoporodowej, która pomoże Ci lepiej zrozumieć własne emocje, wsłuchać się w potrzeby ciała i łagodniej przejść przez doświadczenie straty i żałoby.</p>
+                <p>Wsparcie dla wszystkich, którzy chcą świadomie towarzyszyć bliskim w ich procesie żałoby.</p>
+                <p style="font-weight: 600; color: var(--accent-color); font-size: 1.3em; font-family: 'Playfair Display', serif; margin-top: 40px;">Twoja przestrzeń na emocje. Zrozumienie. Ukojenie.</p>
+                <div style="margin-top: 40px;">
+                    <a href="https://payhip.com/b/6Xmq8" class="btn-gold" target="_blank" style="display: inline-flex; align-items: center; gap: 8px;"><i class="fas fa-headphones"></i>KUP AUDIOBOOK</a>
+                </div>
+            </div>
+        </div>
 
         <div id="patronaty" class="page-section">
             <div class="section-title"><h2>Patronaty medialne</h2></div>
