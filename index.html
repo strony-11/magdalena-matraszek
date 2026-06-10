@@ -8,11 +8,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="preconnect" href="https://unpkg.com">
     <link rel="icon" href="https://wielkalitera.pl/wp-content/uploads/2025/12/wszystko-jest-ok-magdalena-matraszek-ksiazka.webp" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="preload" as="image" href="https://wielkalitera.pl/wp-content/uploads/2025/12/wszystko-jest-ok-magdalena-matraszek-ksiazka.webp" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet"></noscript>
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"></noscript>
     
     <style>
         :root {
@@ -356,9 +357,9 @@
 
     <div class="container">
         <div id="glowna" class="page-section active">
-            <section class="book-hero" data-aos="fade-up">
+            <section class="book-hero">
                 <div class="book-cover-container">
-                    <div class="book-cover" data-aos="zoom-in">
+                    <div class="book-cover">
                         <img fetchpriority="high" src="https://wielkalitera.pl/wp-content/uploads/2025/12/wszystko-jest-ok-magdalena-matraszek-ksiazka.webp" alt="Wszystko jest OK">
                     </div>
                     
@@ -630,16 +631,16 @@
         </div>
 
 	    <div id="kontakt" class="page-section">
-        <div class="section-title" data-aos="fade-up">
+            <div class="section-title">
             <h2>Kontakt</h2>
         </div>
-        <div style="text-align: center; margin-top: 60px;" data-aos="fade-up">
+        <div style="text-align: center; margin-top: 60px;">
             <a href="mailto:magdalena.matraszek@op.pl" class="kontakt-email" style="font-size: 1.8em; color: #1a1a1a; text-decoration: none; font-weight: 600; display: inline-flex; align-items: center; gap: 15px; font-family: 'Playfair Display', serif; word-break: break-all; overflow-wrap: break-word;">
                 <i class="fas fa-envelope" style="color: #c5a059;"></i> magdalena.matraszek@op.pl
             </a>
         </div>
 
-        <div class="contact-box" data-aos="fade-up">
+        <div class="contact-box">
             <form action="https://formspree.io/f/xvzleyal" method="POST" style="display: flex; flex-direction: column; gap: 15px; text-align: left;">
                 <input type="email" name="email" placeholder="Twój e-mail" required style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 1em;">
                 <textarea name="message" placeholder="Twoja wiadomość..." rows="5" required style="padding: 15px; border: 1px solid #ddd; border-radius: 8px; font-family: 'Montserrat', sans-serif; font-size: 1em; resize: vertical;"></textarea>
@@ -662,7 +663,6 @@
         <p style="margin-top: 20px; font-size: 0.8em; opacity: 0.6;">&copy; 2026 Magdalena Matraszek.</p>
     </footer>
 
-    <script defer src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         function showPage(pageId) {
             document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
@@ -676,8 +676,6 @@
             var content = document.getElementById(id);
             content.style.display = (content.style.display === "block") ? "none" : "block";
         }
-
-        document.addEventListener('DOMContentLoaded', function() { AOS.init(); });
     </script>
 </body>
 </html>
