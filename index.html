@@ -213,16 +213,21 @@
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: 10px 20px;
+            gap: 10px 0;
             margin-top: 30px;
         }
         .galeria-item {
             border-radius: 8px;
             overflow: hidden;
             box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+            width: 87%;
+        }
+        .galeria-item:nth-child(odd) {
+            justify-self: end;
         }
         .galeria-item:nth-child(even) {
             margin-top: 60px;
+            justify-self: start;
         }
         .galeria-item img {
             width: 100%;
@@ -236,6 +241,10 @@
             }
             .galeria-item:nth-child(even) {
                 margin-top: 0;
+            }
+            .galeria-item {
+                width: 100%;
+                justify-self: auto;
             }
         }
         .galeria-date {
