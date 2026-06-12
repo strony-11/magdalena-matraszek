@@ -210,6 +210,11 @@
             .fundacje-grid { grid-template-columns: repeat(2, 1fr); }
         }
 
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
         .galeria-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -695,6 +700,14 @@
             document.querySelectorAll('.navbar a').forEach(el => el.classList.remove('active'));
             document.getElementById('nav-' + pageId).classList.add('active');
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            if (pageId === 'galeria') {
+                document.querySelectorAll('#galeria .galeria-item').forEach(function(el, i) {
+                    el.style.animation = 'none';
+                    void el.offsetHeight;
+                    el.style.animation = 'fadeUp 0.5s ease both';
+                    el.style.animationDelay = (i * 0.1) + 's';
+                });
+            }
         }
 
         function toggleOpinion(id) {
