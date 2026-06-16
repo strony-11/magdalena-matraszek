@@ -28,7 +28,6 @@
             margin: 0;  
             color: var(--text-color);  
             background: linear-gradient(135deg, #fdfcfb 0%, #e2d1c3 50%, #f5efef 100%);
-            background-attachment: fixed;
             min-height: 100vh;
         }
 
@@ -40,8 +39,7 @@
         .navbar {
             position: sticky;
             top: 0;
-            background: rgba(255, 255, 255, 0.8);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
             border-bottom: 1px solid rgba(0,0,0,0.05);
             z-index: 1000;
             padding: 15px 0;
@@ -705,7 +703,7 @@
             document.getElementById(pageId).classList.add('active');
             document.querySelectorAll('.navbar a').forEach(el => el.classList.remove('active'));
             document.getElementById('nav-' + pageId).classList.add('active');
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo(0, 0);
             if (pageId === 'galeria') {
                 var items = document.querySelectorAll('#galeria .galeria-item');
                 items.forEach(function(el) { el.style.animation = 'none'; });
