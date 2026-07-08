@@ -360,14 +360,14 @@
 <body>
 
     <nav class="navbar">
-        <a id="nav-glowna" class="active" onclick="showPage('glowna')">Książka</a>
-        <a id="nav-autor" onclick="showPage('autor')">O autorce</a>
-        <a id="nav-media" onclick="showPage('media')">Media</a>
-        <a id="nav-audiobook" onclick="showPage('audiobook')">Audiobook</a>
-        <a id="nav-patronaty" onclick="showPage('patronaty')">Patronaty</a>
-		<a id="nav-wspolprace" onclick="showPage('wspolprace')">Współpraca</a>
-		<a id="nav-galeria" onclick="showPage('galeria')">Galeria</a>
-		<a id="nav-kontakt" onclick="showPage('kontakt')">Kontakt</a>
+        <a id="nav-glowna" class="active" href="#glowna" onclick="showPage('glowna')">Książka</a>
+        <a id="nav-autor" href="#autor" onclick="showPage('autor')">O autorce</a>
+        <a id="nav-media" href="#media" onclick="showPage('media')">Media</a>
+        <a id="nav-audiobook" href="#audiobook" onclick="showPage('audiobook')">Audiobook</a>
+        <a id="nav-patronaty" href="#patronaty" onclick="showPage('patronaty')">Patronaty</a>
+		<a id="nav-wspolprace" href="#wspolprace" onclick="showPage('wspolprace')">Współpraca</a>
+		<a id="nav-galeria" href="#galeria" onclick="showPage('galeria')">Galeria</a>
+		<a id="nav-kontakt" href="#kontakt" onclick="showPage('kontakt')">Kontakt</a>
     </nav>
 
     <div class="container">
@@ -712,10 +712,13 @@
 
     <script>
         function showPage(pageId) {
+            var page = document.getElementById(pageId);
+            if (!page || page.classList.contains('active')) return;
             document.querySelectorAll('.page-section').forEach(el => el.classList.remove('active'));
-            document.getElementById(pageId).classList.add('active');
+            page.classList.add('active');
             document.querySelectorAll('.navbar a').forEach(el => el.classList.remove('active'));
             document.getElementById('nav-' + pageId).classList.add('active');
+            window.location.hash = pageId;
             window.scrollTo(0, 0);
             if (pageId === 'galeria') {
                 var items = document.querySelectorAll('#galeria .galeria-item');
@@ -729,10 +732,18 @@
             }
         }
 
+        function navigateFromHash() {
+            var pageId = window.location.hash.replace('#', '') || 'glowna';
+            if (document.getElementById(pageId)) showPage(pageId);
+        }
+
         function toggleOpinion(id) {
             var content = document.getElementById(id);
             content.style.display = (content.style.display === "block") ? "none" : "block";
         }
+
+        window.addEventListener('hashchange', navigateFromHash);
+        navigateFromHash();
     </script>
 </body>
 </html>
