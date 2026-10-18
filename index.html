@@ -355,9 +355,52 @@
 .card-content { padding: 20px; }
 .card-content h3 { font-size: 1rem; margin: 0 0 10px 0; line-height: 1.4; }
 .video-meta { font-size: 0.8em; color: var(--accent-color); font-weight: 600; text-transform: uppercase; }
+        .popup-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0, 0, 0, 0.85);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+        }
+        .popup-content {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+        }
+        .popup-content img {
+            max-width: 90vw;
+            max-height: 90vh;
+            object-fit: contain;
+            border-radius: 4px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        .popup-close {
+            position: absolute;
+            top: -45px;
+            right: 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.8em;
+            font-family: Arial, sans-serif;
+            cursor: pointer;
+            line-height: 1;
+            padding: 0 10px;
+            transition: color 0.3s;
+        }
+        .popup-close:hover { color: var(--accent-color); }
     </style>
 </head>
 <body>
+
+    <div id="popup-overlay" class="popup-overlay" onclick="closePopup(event)">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <img src="popup.jpg" alt="Ogłoszenie">
+        </div>
+    </div>
 
     <nav class="navbar">
         <a id="nav-glowna" class="active" href="#glowna" onclick="showPage('glowna')">Książka</a>
@@ -762,6 +805,16 @@
             var content = document.getElementById(id);
             content.style.display = (content.style.display === "block") ? "none" : "block";
         }
+
+        function closePopup(e) {
+            if (e && e.target && e.target.id !== 'popup-overlay') return;
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        window.addEventListener('load', function() {
+            var popup = document.getElementById('popup-overlay');
+            if (popup) popup.style.display = 'flex';
+        });
 
         window.addEventListener('hashchange', navigateFromHash);
         navigateFromHash();
